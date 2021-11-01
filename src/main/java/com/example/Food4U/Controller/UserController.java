@@ -26,7 +26,7 @@ public class UserController
   }
 
   @GetMapping("/users/{username}")
-  public ResponseEntity<User> getEmployeeById(@PathVariable(value = "username") String userUsername)
+  public ResponseEntity<User> getUserById(@PathVariable(value = "username") String userUsername)
       throws Exception {
       User employee = userRepository.findById(userUsername).orElseThrow(() -> new Exception("User not found"));
     return ResponseEntity.ok().body(employee);
